@@ -1,0 +1,15 @@
+h1{
+    font-weight:  bolder;
+}
+
+.shell{
+    width: 500px;
+    height: 500px;
+    background-color: darkcyan;
+}
+
+footer{
+    background-color: darkslategrey;
+    color: whitesmoke;
+    padding: 30px;
+}
