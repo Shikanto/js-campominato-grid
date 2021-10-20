@@ -3,8 +3,8 @@ h1{
 }
 
 .shell{
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     background-color: darkcyan;
 }
 
@@ -12,4 +12,15 @@ footer{
     background-color: darkslategrey;
     color: whitesmoke;
     padding: 30px;
+}
+
+.box{
+
+    border: 1px solid;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.bg-click{
+    background-color: lightskyblue;
 }
