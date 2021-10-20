@@ -1,9 +1,12 @@
+
+/* CREO LE CONST DOVE ANDARE A PRENDERE L'HTML */
+
 const containerShell = document.getElementsByClassName("shell")[0];
 const selectDifficulty = document.getElementById("select_difficulty");
 const btnStartGame = document.getElementById("start_game");
 
 
-
+/* CREO FUNZIONE PER SELEZIONARE LA DIFFICOLTA' E DEFINIRE IL NUMERO DI CELLE */
 
 
 function numberCellsDifficulty(level){
@@ -22,28 +25,36 @@ function numberCellsDifficulty(level){
 
 }
 
-
+/* COSA SUCCEDE QUANDO CLICCO SUL BOTTONE AVVIA GIOCO */
 
 btnStartGame.addEventListener("click", function() {
 
+    /* vado nell' html a prendere i value */
     const level = selectDifficulty.value;
 
+    /* passo il valore value alla funzione per capire quante celle devo creare */
     const cells = numberCellsDifficulty(level);
 
     console.log(level);
     console.log(cells);
 
+    /* evoco la funzione per costruire la griglia */
     buildMinefield(cells);
 
 });
 
 function buildMinefield (cells) {
 
+    /* vedo che sono tutti quadrati 7*7 9*9 10*10 */
     const cellsDifficulty = Math.sqrt(cells);
+
+    /* divido la grande 100% per il numero di celle a seconda del  */
     const cellSize = 100 / cellsDifficulty;
     
-    containerShell.innerHTML="";
+    /* reset per la griglia */
+    containerShell.innerHTML ="";
 
+      /* vado ad aggiungere dell'html nella shell */
     for (let i=1; i <= cells; i++){
 
         containerShell.innerHTML += `<div class="box d-flex justify-content-center align-items-center" style="width: ${cellSize}%; height:${cellSize}% ">
@@ -55,19 +66,23 @@ function buildMinefield (cells) {
         
 
     }
+
+    /* prendo tutti gli elementi con classe box */
+    
     let cellCreated = document.getElementsByClassName("box");
     console.log(cellCreated);
+    
+    /* a ogni classe box dò la funzione per cambiare bg quando cliccato */
+    
     for (let x = 1; x < cellCreated.length; x++) {
         const singleCell = cellCreated[x];
         singleCell.addEventListener("click", boxClick);
     }
 }
 
-
-
+/* funzione per il click del singolo box */
 
 function boxClick() {
-    
     this.classList.toggle("bg-click");
   }
 
