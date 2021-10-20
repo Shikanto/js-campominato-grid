@@ -1,6 +1,6 @@
 const containerShell = document.getElementsByClassName("shell")[0];
 const selectDifficulty = document.getElementById("select_difficulty");
-const btnStartGame = document.getElementById("btn_start_game");
+const btnStartGame = document.getElementById("start_game");
 
 
 
@@ -50,10 +50,25 @@ function buildMinefield (cells) {
                                         <div> ${i} </div>
                                     </div>` ;
         
-    
+       
+       
+        
 
     }
-   
+    let cellCreated = document.getElementsByClassName("box");
+    console.log(cellCreated);
+    for (let x = 1; x < cellCreated.length; x++) {
+        const singleCell = cellCreated[x];
+        singleCell.addEventListener("click", boxClick);
+    }
 }
+
+
+
+
+function boxClick() {
+    
+    this.classList.toggle("bg-click");
+  }
 
 
