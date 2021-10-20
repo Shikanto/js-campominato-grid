@@ -48,23 +48,18 @@ function buildMinefield (cells) {
     /* vedo che sono tutti quadrati 7*7 9*9 10*10 */
     const cellsDifficulty = Math.sqrt(cells);
 
-    /* divido la grande 100% per il numero di celle a seconda del  */
+    /* divido la grandezza 100% per il numero di celle a seconda della difficoltà  */
     const cellSize = 100 / cellsDifficulty;
     
     /* reset per la griglia */
     containerShell.innerHTML ="";
 
-      /* vado ad aggiungere dell'html nella shell */
+    /* vado ad aggiungere l'html nella shell */
     for (let i=1; i <= cells; i++){
 
         containerShell.innerHTML += `<div class="box d-flex justify-content-center align-items-center" style="width: ${cellSize}%; height:${cellSize}% ">
                                         <div> ${i} </div>
                                     </div>` ;
-        
-       
-       
-        
-
     }
 
     /* prendo tutti gli elementi con classe box */
